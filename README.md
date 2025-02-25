@@ -144,3 +144,27 @@ All future workspaces lauched willset the env vars for all bash terminals in tho
 
 You can also set env vars in the `.gitpod.yml` but this can only contains non-sensitive var
 
+
+### AWS CLI Installation
+AWS CLI is install for this project via the bas script [`./bin/install_aws_cli`](./bin/install_aws_cli)
+
+[Getting Started Insatall ()](https://docs.aws.amazon.com/cli/latest/userguide/getting-started-install.html)
+
+We can check if our AWS Credentials is configured correctly by running the following AWS CLI command
+
+```sh
+aws sts get-caller=identity
+```
+[AWS CLI Env Vars](https://docs.aws.amazon.com/cli/latest/userguide/cli-configure-envvars.html)
+
+If it is successful you should see a json payload return that looks like this:
+
+```json
+{
+    "UserId": "A9HAZTTLB7WQRWOU63N2R",
+    "Account": "123456789012",
+    "Arn": "arn:aws:iam::123456789012:user/Administrator"
+}
+```
+
+We'll need to generate AWS CLI Credential from the AIM User in order to use the AWS CLI.
